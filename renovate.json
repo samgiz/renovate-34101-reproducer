@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "customDatasources": {
+    "dummy": {
+      "defaultRegistryUrlTemplate": "https://jsonplaceholder.typicode.com/todos/1",
+      "transformTemplates": [
+        "{\"releases\":[{\"version\": \"1.0.0+1\"}, {\"version\": \"1.0.0+2\"}]}"
+      ]
+    }
+  },
+  "packageRules": [
+    {
+      "matchManagers": ["pip_requirements"],
+      "overrideDatasource": "custom.dummy"
+    }
+  ]
+}
